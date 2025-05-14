@@ -11,8 +11,8 @@ export default async function CategoryBar() {
 
 
     return (
-        <div className="sm:block sm:col-span-1 hidden ">
-            <div className="mb-[0.625rem] sm:pt-[1.5rem] sm:px-[1.5rem]">
+        <div className="sm:block sm:col-span-1 hidden sm:pt-[1.5rem] sm:px-[1.5rem]">
+            <div className="mb-[0.625rem] ">
                 <Input className="rounded-full" placeholder="Search by dua categories" />
             </div>
             <div className="">
@@ -42,9 +42,12 @@ type CategoryProps = {
 
 function Category(props: CategoryProps) {
     return (
-        <li  className="flex items-center gap-2 py-[0.875rem] px-[0.625rem] text-nowrap">
-            <PrayerIcon />
-            <div>
+        <li  className="flex w-full h-full gap-2 items-center  py-[0.875rem] px-[0.625rem] text-nowrap">
+            <div className="w-[25%] h-full">
+                <PrayerIcon />
+            </div>
+            
+            <div className="text-nowrap overflow-x-hidden ">
                 <h3 className="font-medium text-sm">{props.catNameEn}</h3>
                 <sub className="text-subtitle font-medium">{props.noOfSubCat} Subcats | {props.noOfDua} duas</sub>
             </div>

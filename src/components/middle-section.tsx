@@ -10,7 +10,7 @@ import {
 
 export default function MiddleSection() {
     return (
-        <div className="col-span-5 sm:col-span-3 flex flex-col sm:ml-[1.5rem] sm:mr-[1.5rem] sm:border-l-2 sm:border-r-2 sm:border-gray-200">
+        <div className="col-span-5 sm:col-span-3 flex flex-col sm:border-l-2 sm:border-r-2 sm:border-gray-200">
             <div className="pl-8 py-[.1rem] bg-primary-20 text-sm">
                 <Breadcrumb>
                     <BreadcrumbList>
