@@ -10,7 +10,7 @@ import SubCategory from "./sub-category"
 
 import { useSetBreadcrumb } from "@/store/breadcrumb";
 
-export default function Category(props: Category) {
+export default function CategoryItem(props: Category) {
 
     const category = useCategory();
     const setCategory = useSetCategory();
@@ -29,7 +29,7 @@ export default function Category(props: Category) {
 
         if (nextValue) {
             clearCategory();
-            const currCategory = await getCategoryWithSubcategoriesAndDuas(props.catId);
+            const currCategory = await getCategoryWithSubcategoriesAndDuas(props.catId!);
             if (currCategory) {
                 setCategory(currCategory);
             } else {
@@ -51,7 +51,7 @@ export default function Category(props: Category) {
 
                 <div className="text-nowrap overflow-x-hidden ">
                     <h3 className="font-medium text-sm">{props.catNameEn}</h3>
-                    <sub className="text-subtitle font-medium">{props.noOfSubCat} Subcats | {props.noOfDua} duas</sub>
+                    <sub className="text-subtitle font-medium">{props.noOfSubcat!} Subcats | {props.noOfDua} duas</sub>
                 </div>
             </li>
             {

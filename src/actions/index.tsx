@@ -4,6 +4,10 @@ import { category, dua, subCategory } from "@/db/schema"
 import { db } from "@/db/drizzle"
 
 
+export async function getAllCategories() {
+    return await db.select().from(category)
+}
+
 export async function getCategoryWithSubcategoriesAndDuas(categoryId: number) {
   // 1. Get the category
   const cat = await db

@@ -1,8 +1,11 @@
 export type Category = {
-    catId: number
-    catNameEn: string,
-    noOfSubCat: number,
-    noOfDua: number
+    id: number;
+    catId: number | null;
+    catNameBn: string | null;
+    catNameEn: string | null;
+    noOfSubcat: number | null;
+    noOfDua: number | null;
+    catIcon: string | null;
 }
 
 export type SubCategory = {
