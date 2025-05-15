@@ -18,7 +18,7 @@ export default function MiddleSection() {
                 categories && categories.subcategories.length > 0 &&
 
                 categories.subcategories.map((subCategory, index)=>(
-                    <section key={index} id={`${subCategory.subcatId}`}>
+                    <section key={index}>
                         <div className="py-2 px-8 bg-[#EEF6EB] text-sm">
                             <span className="text-primary mr-2 font-medium">Section:</span>
                             <span>{subCategory.subcatNameEn}</span>

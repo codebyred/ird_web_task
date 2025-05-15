@@ -8,11 +8,11 @@ import PlayIcon from "./icons/play";
 
 export default function DuaCard(props: Dua) {
     return (
-        <div className="mb-[1.875rem] border-b-1 border-primary ">
+        <div className="mb-[1.875rem] border-b-1 border-primary " id={`${props.duaId}`}>
             <div className="py-[1.875rem] mb-[3.125rem]">
                 <h3 className="mb-[1.875rem] flex items-center gap-2 text-primary font-medium">
                     <ArabicIcon />
-                    {props.duaNameEn}
+                    {props.duaNameEn?.split("#")}
                 </h3>
                 <div className="mb-[1.5rem]">
                     <p className="text-right mb-[1.875rem]">{props.duaArabic}</p>
