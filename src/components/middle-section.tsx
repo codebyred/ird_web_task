@@ -1,3 +1,5 @@
+"use client"
+
 import {
     Breadcrumb,
     BreadcrumbItem,
@@ -7,8 +9,15 @@ import {
     BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
 
+import type { Dua } from "@/lib/types";
+
+import { useCategory } from "@/store"
+import React from "react";
 
 export default function MiddleSection() {
+
+    const categories = useCategory();
+
     return (
         <div className="col-span-5 sm:col-span-3 flex flex-col sm:border-l-2 sm:border-r-2 sm:border-gray-200">
             <div className="pl-8 py-[.1rem] bg-primary-20 text-sm">
@@ -31,29 +40,45 @@ export default function MiddleSection() {
                     </BreadcrumbList>
                 </Breadcrumb>
             </div>
-            <div className="py-2 px-8 bg-[#EEF6EB] text-sm">
-                <span className="text-primary mr-2 font-medium">Section:</span>
-                <span>The Servent is dependent on his lord</span>
-            </div>
-            <div className="px-[1rem] sm:px-[3.125rem] py-0">
-                <DuaCard />
-                <DuaCard />
-            </div>
+            {
+                categories && categories.subcategories.length > 0 &&
+
+                categories.subcategories.map((subCategory, index)=>(
+                    <section key={index} id={`${subCategory.subcatId}`}>
+                        <div className="py-2 px-8 bg-[#EEF6EB] text-sm">
+                            <span className="text-primary mr-2 font-medium">Section:</span>
+                            <span>{subCategory.subcatNameEn}</span>
+                        </div>
+                        <div className="px-[1rem] sm:px-[3.125rem] py-0">
+                            {
+                                subCategory.duas.length > 0 &&
+                                subCategory.duas.map((dua, index)=>(
+                                    <React.Fragment key={index}>
+                                        <DuaCard {...dua}/>
+                                    </React.Fragment>
+                                ))
+                            }
+                             
+                        </div>
+                    </section>
+                ))
+
+            }
+
         </div>
     )
 }
 
-
-function DuaCard() {
+function DuaCard(props: Dua) {
     return (
         <div className="mb-[1.875rem] border-b-1 border-primary ">
             <div className="py-[1.875rem] mb-[3.125rem]">
                 <h3 className="mb-[1.875rem] flex items-center gap-2 text-primary font-medium">
                     <ArabicIcon />
-                    1. The servant is dependent on his lord
+                    {props.duaNameEn}
                 </h3>
                 <div className="mb-[1.5rem]">
-                    <p className="text-right mb-[1.875rem]">إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ</p>
+                    <p className="text-right mb-[1.875rem]">{props.duaArabic}</p>
                     <p className="italic text-subtitle" >Iyyaaka na'budu wa lyyaaka nasta'een</p>
                 </div>
 

@@ -11,8 +11,6 @@ export default async function CategoryBar() {
 
     const categories = await db.select().from(category);
 
-    console.log(categories)
-
     return (
         <div className="sm:block sm:col-span-1 hidden sm:pt-[1.5rem] sm:px-[1.5rem]">
             <div className="mb-[0.625rem] ">
@@ -24,7 +22,7 @@ export default async function CategoryBar() {
                         categories.map((category, index) => (
                             <React.Fragment key={index}>
                                 <Category
-                                    catId={category.id}
+                                    catId={category.catId!}
                                     catNameEn={category.catNameEn!}
                                     noOfSubCat={category.noOfSubcat!}
                                     noOfDua={category.noOfDua!}

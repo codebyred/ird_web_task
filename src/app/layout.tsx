@@ -31,9 +31,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body
-        className={`${poppins.variable} ${geistSans.variable} ${geistMono.variable} antialiased flex min-h-screen w-full`}
+        className={`${poppins.variable} ${geistSans.variable} ${geistMono.variable} antialiased flex min-h-screen w-full `}
       >
         <Navbar/> 
 
