@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import IconButton from "@/components/icon-button";
 import { Logo } from "./logo";
+import Hamburger from "./Hamburger";
 
 // SVG icons as constants
 const ICONS = {
@@ -32,7 +33,7 @@ export default function Navbar() {
 
 
   return (
-    <nav className="sm:w-[4.25rem] sm:py-2 sm:flex sm:flex-col sm:justify-between sm:items-center sm:h-screen hidden bg-shade-2 sm:fixed sm:top-0 sm:left-0" aria-label="Main navigation">
+    <nav className="sm:w-[4.25rem] sm:py-2 sm:flex sm:flex-col sm:justify-between sm:items-center sm:h-screen hidden bg-shade-2 sm:fixed sm:top-0 sm:left-0" aria-label="Main navigation">   
       <div>
         <Logo />
       </div>

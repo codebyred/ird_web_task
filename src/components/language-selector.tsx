@@ -1,4 +1,5 @@
 "use client";
+import { cn } from "@/lib/utils";
 import React, { useState } from "react";
 
 interface Language {
@@ -13,9 +14,11 @@ const languages: Language[] = [
   { code: "fr", name: "Fr", flag: "https://cdn.builder.io/api/v1/image/assets/TEMP/0864bacceaa6c1d0e44fc9695d8c8c36cf12c87d" },
 ];
 
+type LanguageSelectorProps = {
+  className?: string
+}
 
-
-const LanguageSelector: React.FC = () => {
+const LanguageSelector: React.FC<LanguageSelectorProps> = ({className}: LanguageSelectorProps) => {
   const [selectedLanguage, setSelectedLanguage] = useState<Language>(languages[0]);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -33,7 +36,7 @@ const LanguageSelector: React.FC = () => {
   </svg>`;
 
   return (
-    <div className="relative">
+    <div className={cn("relative", className)}>
       <button
         className="flex gap-2 justify-center items-center p-2.5 bg-neutral-200 bg-opacity-60 rounded-[30px] w-[92px]"
         onClick={toggleDropdown}

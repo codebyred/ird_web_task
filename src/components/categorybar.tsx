@@ -2,12 +2,11 @@ import { Input } from "@/components/ui/input"
 import { db } from "@/db/drizzle"
 import { category } from "@/db/schema"
 import React from "react";
-import Category from "./category";
+import Category from "./category-item";
 
 
 
 export default async function CategoryBar() {
-
 
     const categories = await db.select().from(category);
 

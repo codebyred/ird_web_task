@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
+import MobileCategoryBar from "@/components/mobile-categorybar";
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -33,10 +34,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${poppins.variable} ${geistSans.variable} ${geistMono.variable} antialiased flex min-h-screen w-full `}
+        className={`${poppins.variable} ${geistSans.variable} ${geistMono.variable} antialiased flex min-h-screen w-full relative`}
       >
         <Navbar/> 
-
+        <MobileCategoryBar/>
         {children}
 
         
