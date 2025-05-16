@@ -41,10 +41,10 @@ A pixel-perfect fullstack implementation of a Dua listing website, built with **
 ## 📸 Screenshots
 
 ### 🖥️ Desktop View
-![Home Screenshot](./public/screenshots/desktop-view.png)
+![Home Screenshot](./public/desktop-view.png)
 
 ### 📱 Mobile View
-![Mobile Screenshot](./public/screenshots/mobile-view-1.png)
-![Mobile Screenshot](./public/screenshots/mobile-view-2.png)
+![Mobile Screenshot](/public/mobile-view-1.png)
+![Mobile Screenshot](/public/mobile-view-2.png)
 
 
